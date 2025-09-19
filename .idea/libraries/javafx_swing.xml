@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="javafx.swing">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../DS project/familytreerepresentation/javafx.swing.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/Family Tree Representation Binary Tree/javafx-sdk-24.0.2" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/Family Tree Representation Binary Tree/javafx-sdk-24.0.2" recursive="false" type="SOURCES" />
+  </library>
+</component>
