@@ -1,0 +1,155 @@
+Advanced Family Tree JavaFX Application
+Overview
+
+The Advanced Family Tree project is a JavaFX-based interactive application that allows users to visualize, navigate, and manage a large multi-generation family tree. The application supports zooming, panning, threaded rendering for smooth performance, and animated path highlighting when searching for a family member.
+
+This project demonstrates the integration of JavaFX GUI, multithreading, serialization, and tree data structures in a real-world scenario.
+
+Features
+
+Large Tree Visualization: Supports multiple generations with clear node layout.
+
+Interactive Zoom & Pan: Navigate large trees easily using mouse wheel and drag.
+
+Animated Path Highlighting: Search a family member and see their ancestry path glow sequentially.
+
+Search & Highlight: Quickly locate and highlight a member by name.
+
+Node Coloring by Gender: Males are displayed in light blue circles, females in pink rectangles.
+
+Tree Traversals: Preorder, Inorder, and Postorder traversal displayed in a TextArea.
+
+Save & Load: Serialize the tree to a file and load it back.
+
+Threaded GUI Updates: All rendering and heavy computations run in background threads to keep the UI smooth.
+
+Demo Screenshot
+
+
+Example of a multi-generation family tree with highlighted path.
+
+Installation & Setup
+
+Requirements:
+
+Java 17+ (JavaFX SDK compatible)
+
+IDE: IntelliJ, Eclipse, or VS Code
+
+JavaFX SDK installed and properly configured
+
+Clone or Download Project:
+
+git clone <repository-url>
+
+
+Or download as ZIP and extract.
+
+Project Structure:
+
+src/
+├─ MainFX.java          // Entry point of the application
+├─ FamilyTreePane.java  // Custom pane for rendering the tree
+├─ FamilyTree.java      // Family tree logic and traversals
+├─ person.java          // Node structure
+└─ FileHandler.java     // Save/load serialization
+
+
+Run the Application:
+
+Ensure JavaFX SDK is added to module path.
+
+Compile and run MainFX.java.
+
+Example command-line run (Mac/Windows):
+
+javac --module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml src/*.java
+java --module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml -cp src MainFX
+
+Usage
+
+Search Member:
+
+Enter a name in the search box and click Search & Highlight.
+
+The path from root to the member will glow sequentially.
+
+Clear Highlight:
+
+Click Clear Highlight to remove the current highlight.
+
+Tree Traversals:
+
+Click Preorder, Inorder, or Postorder to view traversal results in the output panel.
+
+Save & Load:
+
+Click Save Default to save the current tree to familytree.ser.
+
+Click Load Default to load the previously saved tree.
+
+Navigate Tree:
+
+Zoom: Use mouse scroll.
+
+Pan: Click and drag anywhere on the tree panel.
+
+Node Design
+Gender	Shape	Color
+Male	Circle	Light Blue
+Female	Rectangle	Pink
+
+Highlighted Node: Red stroke.
+
+Animated Path: Orange glow.
+
+Key Technical Details
+
+JavaFX Pane: Custom FamilyTreePane handles all node drawing, lines, and text.
+
+Threaded Rendering: Background threads ensure smooth updates for large trees.
+
+Serialization: FileHandler uses ObjectOutputStream and ObjectInputStream.
+
+Scalable Layout: Recursive algorithm calculates subtree widths for proper spacing.
+
+Animations: FillTransition used for animated path highlighting.
+
+Example Large Tree
+
+Generations: 4
+
+Nodes: 30+
+
+Structure:
+
+GreatGrandfather
+  ├─ Grandfather1
+  │    ├─ Father1
+  │    │    ├─ Me
+  │    │    └─ Sister
+  │    └─ Aunt1
+  └─ Grandfather2
+       ├─ Uncle1
+       └─ Aunt2
+
+
+Children of Me, Sister, Cousin1 etc. are also added for depth.
+
+Future Enhancements
+
+Drag-and-drop node editing
+
+Adding photos or avatars to nodes
+
+Export tree as image or PDF
+
+Dynamic node insertion/removal at runtime
+
+Credits
+
+Developer: Jawad Khan
+
+Technologies: Java 17, JavaFX
+
+Inspired by classic family tree visualization examples with enhanced threading and animation.
